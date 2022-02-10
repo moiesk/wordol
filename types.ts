@@ -11,7 +11,7 @@ type GameStateRowItem = {
 type GameStateRows = Array<GameStateRow>;
 
 type ServerErrorResponse = {
-  error: "api_error" | "unknown_word";
+  error: string;
 }
 
 type ServerSuccessResponse = {

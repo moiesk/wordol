@@ -5,24 +5,24 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Wordledge: Wordle on Next.js at the Edge</title>
+        <title>Wordol: Serverless Wordle on DigitalOcean</title>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@rauchg" />
+        <meta name="twitter:site" content="@digitalocean" />
         <meta
           name="twitter:title"
-          content="Wordledge: Wordle on Next.js at the Edge"
+          content="Wordol: Serverless Wordle on DigitalOcean"
         />
         <meta
           property="og:description"
-          content="A spinoff of the popular Wordle game written in Next.js"
+          content="Wordle game for DigitalOcean Cloud Functions"
         />
         <meta
           property="og:image"
-          content="https://wordledge.vercel.app/card.png"
+          content="/card.png"
         />
         <meta
           name="twitter:image"
-          content="https://wordledge.vercel.app/card.png"
+          content="/card.png"
         />
       </Head>
       <Component {...pageProps} />

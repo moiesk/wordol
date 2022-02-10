@@ -15,7 +15,7 @@ type CheckOptions = {
 };
 
 async function check(word: string, opts: CheckOptions) {
-  const res = await fetch(`/check?word=${encodeURIComponent(word)}`, opts);
+  const res = await fetch(`/api/wordle/check?word=${encodeURIComponent(word)}`, opts);
   return await res.json();
 }
 
@@ -156,7 +156,7 @@ export default function Home() {
   }
 
   function getShareText(gameState: GameState, html = false) {
-    const text = `${(html ? '<a href="https://wordledge.vercel.app">Wordledge</a>' : 'Wordledge.vercel.app')} #${GAME_ID} ${
+    const text = `${(html ? '<a href="https://digitalocean.com/nimbella">Wordol</a>' : 'wordol.doserverless.com')} #${GAME_ID} ${
       getIsVictory(gameState) ? gameState.state.length : "X"
     }/${BOARD_SIZE}
 
@@ -226,9 +226,9 @@ ${gameState.state
     let { error, match } = serverResponse;
 
     if (error) {
-      if (error === "unknown_word") {
+      if (error === "unknown word") {
         toast.error("Invalid English word", { id: "toast", duration: 1000 });
-      } else if (error === "api_error") {
+      } else {
         toast.error("Dictionary API error", { id: "toast" });
       }
     } else {
@@ -384,7 +384,7 @@ ${gameState.state
       </div>
 
       <div className="footer" onClick={(e) => e.stopPropagation()}>
-        Deployed on <a href="https://vercel.com" target="_blank" rel="noreferrer">Vercel</a> (<a href="https://github.com/rauchg/wordledge" rel="noreferrer" target="_blank">source</a>) <span>|</span>{" "}
+        Deployed on <a href="https://digitalocean.com" target="_blank" rel="noreferrer">DigitalOcean</a> (<a href="https://github.com/rabbah/wordol" rel="noreferrer" target="_blank">source</a>) <span>|</span>{" "}
         Inspired by <a href="https://www.powerlanguage.co.uk/wordle/" rel="noreferrer" target="_blank">Wordle</a>
       </div>
 
