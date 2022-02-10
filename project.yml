@@ -6,7 +6,3 @@ packages:
           DICTIONARY_API_KEY: ${DICTIONARY_API_KEY}
           SKEW: ${SKEW}
           STRIDE: ${STRIDE}
-      - name: slack
-        main: handler
-        environment:
-          SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL}

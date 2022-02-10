@@ -19,11 +19,6 @@ async function check(word: string, opts: CheckOptions) {
   return await res.json();
 }
 
-async function slack(endgame: string) {
-  const res = await fetch(`/api/wordle/slack?result=${encodeURIComponent(endgame)}`);
-  return await res.json();
-}
-
 function readGameStateFromStorage() {
   let state = [];
   try {
@@ -198,24 +193,6 @@ ${gameState.state
             toast.success("Copied!", { id: "clipboard" });
           } else {
             toast.error("Clipboard error", { id: "clipboard" });
-          }
-        });
-      }
-      return gameState;
-    });
-  }
-
-  function onSendToSlack(e: MouseEvent) {
-    e.stopPropagation();
-    e.preventDefault();
-    setGameState((gameState: GameState) => {
-      if (gameState) {
-        slack(getShareText(gameState))
-        .then((ok) => {
-          if (ok) {
-            toast.success("Slacked!");
-          } else {
-            toast.error("Slack error");
           }
         });
       }
@@ -399,8 +376,6 @@ ${gameState.state
               <div className="share-text" onClick={(e) => e.stopPropagation()}>
                 {getShareText(gameState)}
               </div>
-
-              <button onClick={onSendToSlack}>📋 Send to slack</button>
             </div>
           </div>
         ) : null}
