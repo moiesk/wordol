@@ -1,5 +1,5 @@
 {
-  "name": "wordledge",
+  "name": "wordol",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/react": "^17.0.38",
     "eslint": "8.6.0",
-    "eslint-config-next": "12.0.7"
+    "eslint-config-next": "12.0.7",
+    "typescript": "^4.5.5"
   }
 }
