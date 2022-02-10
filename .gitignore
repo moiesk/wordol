@@ -38,3 +38,4 @@ yarn-error.log*
 **/node_modules/
 __deployer__.zip
 packages/wordle/check/package-lock.json
+packages/wordle/slack/package-lock.json
