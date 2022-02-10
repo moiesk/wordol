@@ -11,7 +11,9 @@ module.exports.main = (() => {
 
   const { wordlist } = require('./words')
   const today = new Date()
-  const pick = (today.getFullYear() + today.getMonth() + today.getDay() + 7) * 41
+  const skew = parseInt(process.env.SKEW) || 7
+  const stride = parseInt(process.env.STRIDE) || 41
+  const pick = (today.getFullYear() + today.getMonth() + today.getDay() + skew) * stride
   wordOfTheDay = wordlist[pick % wordlist.length]
   console.log(wordOfTheDay)
   return (args) => check(args, wordOfTheDay)
