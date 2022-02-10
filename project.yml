@@ -2,6 +2,5 @@ packages:
   - name: wordle
     actions:
       - name: check
-        environment: $(
-          DICTIONARY_API_KEY
-        )
+        environment:
+          DICTIONARY_API_KEY: ${DICTIONARY_API_KEY}
