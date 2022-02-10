@@ -1,0 +1,7 @@
+packages:
+  - name: wordle
+    actions:
+      - name: check
+        environment: $(
+          DICTIONARY_API_KEY
+        )
