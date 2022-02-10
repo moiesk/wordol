@@ -4,3 +4,7 @@ packages:
       - name: check
         environment:
           DICTIONARY_API_KEY: ${DICTIONARY_API_KEY}
+      - name: slack
+        main: handler
+        environment:
+          SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL}
